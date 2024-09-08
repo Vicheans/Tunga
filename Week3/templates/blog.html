@@ -1,0 +1,24 @@
+
+{% extends 'layout/index.html'%}
+{%block title%}
+    Blog
+{%endblock%}
+
+{% include "layout/navbar.html" %}
+
+{%block content%}
+Blog Posts Here
+<div>
+    {%for post in posts%}
+    <div>
+       <h2> <a href="/post/{{post.id}}">{{post.title}}</a> </h2>
+    </div>
+    <div>
+        <p>
+            {{post.content}}
+        </p>
+        Published: {{post.date}}
+    </div>
+    {% endfor %}
+</div>
+{%endblock%}

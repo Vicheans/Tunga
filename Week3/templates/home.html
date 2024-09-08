@@ -1,0 +1,17 @@
+{% extends 'layout/index.html'%}
+{%block title%}
+    Home
+{%endblock%}
+
+{% include "layout/navbar.html" %}
+
+{%block content%}
+    Welcome Page On a Bicycle
+        {% with messages = get_flashed_messages(with_categories=true)%}
+            {% if messages %}
+                {% for categorry, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{%endblock%}
